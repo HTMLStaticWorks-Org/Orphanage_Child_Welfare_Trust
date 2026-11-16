@@ -289,6 +289,24 @@ img { display: block; max-width: 100%; height: auto; }
   color: #ffffff !important;
 }
 
+/* In all Hero sections (both light and dark theme), keep the second button solid white for maximum contrast */
+.hero .btn-light,
+.page-hero .btn-light,
+:root[data-theme="dark"] .hero .btn-light,
+:root[data-theme="dark"] .page-hero .btn-light {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1.5px solid #ffffff !important;
+  font-weight: 700 !important;
+}
+.hero .btn-light:hover,
+.page-hero .btn-light:hover,
+:root[data-theme="dark"] .hero .btn-light:hover,
+:root[data-theme="dark"] .page-hero .btn-light:hover {
+  background: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
 .btn-outline {
   background: transparent;
   color: var(--primary) !important;
@@ -356,7 +374,7 @@ img { display: block; max-width: 100%; height: auto; }
   background-image: url('https://images.unsplash.com/photo-1472162072942-cd5147eb3902?auto=format&fit=crop&w=2000&q=85');
 }
 .hero-home2 {
-  background-image: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=2000&q=85');
+  background-image: url('https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=2000&q=85');
 }
 .hero-work {
   background-image: url('https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?auto=format&fit=crop&w=2000&q=85');
@@ -1457,42 +1475,66 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 /* Password Eye Toggle (Issue 17) */
+/* Password Eye Toggle (Issue 17 & Aligned Inside Input) */
+.password-wrap,
 .password-input-wrap {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%;
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  margin-top: 8px !important;
 }
+.password-wrap input,
 .password-input-wrap input {
-  padding-right: 46px !important;
+  display: block !important;
+  width: 100% !important;
+  margin-top: 0 !important;
+  padding: 13px 48px 13px 15px !important;
+  box-sizing: border-box !important;
 }
+:root[dir="rtl"] .password-wrap input,
 :root[dir="rtl"] .password-input-wrap input {
-  padding-right: 14px !important;
-  padding-left: 46px !important;
+  padding: 13px 15px 13px 48px !important;
 }
+.password-toggle,
 .password-toggle-btn {
-  position: absolute;
-  right: 12px;
-  background: transparent;
-  border: 0;
-  color: var(--muted);
-  cursor: pointer;
-  padding: 4px;
-  display: grid;
-  place-items: center;
-  transition: color .2s ease;
-  z-index: 2;
+  position: absolute !important;
+  right: 12px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  color: var(--muted) !important;
+  cursor: pointer !important;
+  padding: 6px !important;
+  margin: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: color .2s ease !important;
+  z-index: 10 !important;
+  line-height: 1 !important;
 }
+:root[dir="rtl"] .password-toggle,
 :root[dir="rtl"] .password-toggle-btn {
-  right: auto;
-  left: 12px;
+  right: auto !important;
+  left: 12px !important;
 }
+.password-toggle:hover,
 .password-toggle-btn:hover {
-  color: var(--primary);
+  color: var(--primary) !important;
 }
-.eye-ico {
-  width: 20px;
-  height: 20px;
+.password-toggle svg,
+.password-toggle-btn svg,
+.eye-ico,
+.eye-open,
+.eye-closed {
+  width: 20px !important;
+  height: 20px !important;
+  stroke: currentColor !important;
+  display: block !important;
+  pointer-events: none !important;
 }
 
 /* Remember Me & Forgot Password Row (Issue 17) */
